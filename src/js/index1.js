@@ -37,11 +37,11 @@ function renderAuthPopup(e) {
 }
 
 function downloadCardChecklists (e) {
-    return getChecklists(e, "cards", e.getContext().card).then(async function (t) {
+    return getChecklists(e, "cards", e.getContext().card).then(function (t) {
         //var n = stringifyChecklist(t);
         // console.log(t)
         console.log(getCheckedItems(t))
-        await addToBring()
+        //addToBring()
         e.closePopup()
     })
 }

@@ -1,4 +1,4 @@
-//const bringApi = require(`bring-shopping`);
+import bring from 'bring.js'
 
 var BRING_ICON = 'https://global-uploads.webflow.com/5fbe6548a005d56f0dd39a2e/5fc24a65f7e1555200865e1b_bring-logo.svg';
 var Promise = TrelloPowerUp.Promise
@@ -78,15 +78,15 @@ function getChecklists (e, t, n) {
 }
 
 async function addToBring(){
-    const bring = new bringApi({mail: `benjamin.fuhlbruegge@gmail.com`, password: `9PiC!TSxnRXLrG&Q`});
+    const bringapi = new bring({mail: `benjamin.fuhlbruegge@gmail.com`, password: `9PiC!TSxnRXLrG&Q`});
     try {
-        await bring.login();
-        console.log(`Successfully logged in as ${bring.name}`);
-        return bring;
+        await bringapi.login();
+        console.log(`Successfully logged in as ${bringapi.name}`);
+        return bringapi;
     } catch (e) {
         console.error(`Error on Login: ${e.message}`);
     }
-    const xyz = await bring.saveItem('9b7a5bb0-f4f2-4b83-b545-3fa72545216d',"Gouda", "2TL")
+    const xyz = await bringapi.saveItem('9b7a5bb0-f4f2-4b83-b545-3fa72545216d',"Gouda", "2TL")
 }
 
 

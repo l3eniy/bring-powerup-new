@@ -1,0 +1,19 @@
+{
+  "name": "bring-powerup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/l3eniy/bring-powerup.git",
+  "author": "l3eniy <pt!gD%f6%^01>",
+  "scripts": {
+    "build": "parcel build src/html/*.html"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "bring-shopping": "^1.4.3",
+    "parcel-bundler": "^1.12.5",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "dependencies": {
+    "yarn": "^1.22.18"
+  }
+}

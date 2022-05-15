@@ -9,7 +9,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "bring-shopping": "^1.4.3"
   },
   "dependencies": {
     "yarn": "^1.22.18"

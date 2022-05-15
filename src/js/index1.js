@@ -1,4 +1,4 @@
-import bring from '../js/bring.js'
+import {Bring} from '../js/bring.js'
 
 var BRING_ICON = 'https://global-uploads.webflow.com/5fbe6548a005d56f0dd39a2e/5fc24a65f7e1555200865e1b_bring-logo.svg';
 var Promise = TrelloPowerUp.Promise
@@ -78,7 +78,7 @@ function getChecklists (e, t, n) {
 }
 
 async function addToBring(){
-    const bringapi = new bring({mail: `benjamin.fuhlbruegge@gmail.com`, password: `9PiC!TSxnRXLrG&Q`});
+    const bringapi = new Bring({mail: `benjamin.fuhlbruegge@gmail.com`, password: `9PiC!TSxnRXLrG&Q`});
     try {
         await bringapi.login();
         console.log(`Successfully logged in as ${bringapi.name}`);

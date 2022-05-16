@@ -18,30 +18,24 @@ class BringApi {
         return this.height * this.width;
       }
 
-    async login() {
+    login() {
         let data;
-        //build body for application/x-www-form-urlencoded
-        var details = {
-            "email": this.mail,
-            "password": this.password
-        };
-        const formBody = Object.keys(details).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(details[key])).join('&');
         // Build headers
         let headerss = this.headers
         headerss[`Content-Type`] = `application/x-www-form-urlencoded`;
 
 
         try {
-            data = await fetch(`${this.url}bringauth`, {
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                mode: 'cors', // no-cors, *cors, same-origin
-                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-                credentials: 'same-origin', // include, *same-origin, omit
-                headers: headerss,
-                redirect: 'follow', // manual, *follow, error
-                referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-                body: formBody // body data type must match "Content-Type" header
-              });
+            data = axios.post(
+                `${this.url}bringauth`,
+                {
+                    email: this.mail,
+                    password: this.password
+                },
+                {
+                    headers: headerss
+                });
+            
         }
         catch (e) {
             throw new Error(`Cannot Login: ${e.message}`);

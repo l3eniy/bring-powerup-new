@@ -1,7 +1,8 @@
 var express = require("express");
 const bringApi = require(`bring-shopping`);
 const serverless = require('serverless-http')
-require('../build/js/${jsfiles}.js')
+require('../build/js/authorize.js')
+require('../build/js/bring.js')
 
 
 const app = express();

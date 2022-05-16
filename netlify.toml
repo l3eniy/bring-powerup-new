@@ -1,3 +1,5 @@
 [build]
 
+included_files = ["build/**"]
+
 functions = "functions"

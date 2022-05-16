@@ -6,7 +6,7 @@ const serverless = require('serverless-http')
 const app = express();
 //const router = express.Router();
 
-app.use(express.static('src'));
+app.use(express.static('build'));
 
 const bring = new bringApi({mail: `benjamin.fuhlbruegge@gmail.com`, password: `9PiC!TSxnRXLrG&Q`});
 

@@ -12,7 +12,7 @@ const bring = new bringApi({mail: `benjamin.fuhlbruegge@gmail.com`, password: `9
 
 
 
-app.get("/url", async (req, res, next) => {
+app.get("/", async (req, res, next) => {
     try {
         await bring.login();
         console.log(`Successfully logged in as ${bring.name}`);
@@ -26,10 +26,6 @@ app.get("/url", async (req, res, next) => {
 
 
 app.use('/.netlify/functions/app', router)
-
-app.listen(3000, () => {
- console.log("Server running on port 3000");
-});
 
 
 module.exports.handler = serverless(app)

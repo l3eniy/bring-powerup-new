@@ -1,9 +1,15 @@
 var express = require("express");
 const bringApi = require(`bring-shopping`);
-var app = express();
+const serverless = require('serverless-http')
+
+
+const app = express();
+const router = express.Router();
+
 app.use(express.static('src'));
 
 const bring = new bringApi({mail: `benjamin.fuhlbruegge@gmail.com`, password: `9PiC!TSxnRXLrG&Q`});
+
 
 
 app.get("/url", async (req, res, next) => {
@@ -18,6 +24,12 @@ app.get("/url", async (req, res, next) => {
     res.json(x);
    });
 
+
+app.use('/.netlify/functions/app', router)
+
 app.listen(3000, () => {
  console.log("Server running on port 3000");
 });
+
+
+module.exports.handler = serverless(app)

@@ -5,8 +5,8 @@
   "repository": "https://github.com/l3eniy/bring-powerup-new.git",
   "author": "l3eniy <pt!gD%f6%^01>",
   "scripts": {
-    "start": "./node_modules/.bin/netlify-lambda serve build",
-    "build": "./node_modules/.bin/netlify-lambda build build"
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src"
   },
   "license": "MIT",
   "devDependencies": {

@@ -24,6 +24,10 @@ app.get("/", async (req, res, next) => {
     res.json(x);
    });
 
+   app.get("/test", (req, res, next) => {
+    res.json({"hello" : "test"});
+   });
+
 
 app.use('/.netlify/functions/app', router)
 

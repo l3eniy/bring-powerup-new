@@ -48,7 +48,7 @@ function downloadCardChecklists (e) {
         options.password = "9PiC!TSxnRXLrG&Q";
 
         var api = new bring.BringApi(options)
-        console.log(api.login())
+        console.log(api.testget())
 
 
         //addToBring()

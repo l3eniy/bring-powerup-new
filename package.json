@@ -5,7 +5,8 @@
   "repository": "https://github.com/l3eniy/bring-powerup-new.git",
   "author": "l3eniy <pt!gD%f6%^01>",
   "scripts": {
-    "build": "node ./src/js/app.js"
+    "start": "./node_modules/.bin/netlify-lambda serve build",
+    "build": "./node_modules/.bin/netlify-lambda build build"
   },
   "license": "MIT",
   "devDependencies": {
@@ -13,6 +14,8 @@
   },
   "dependencies": {
     "bring-shopping": "^1.4.3",
+    "netlify-lambda": "^2.0.15",
+    "serverless-http": "^3.0.1",
     "express": "^4.18.1",
     "yarn": "^1.22.18"
   }

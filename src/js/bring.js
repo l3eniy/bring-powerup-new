@@ -23,7 +23,7 @@ class BringApi {
         // Build headers
         let headerss = this.headers
         headerss[`Content-Type`] = `application/x-www-form-urlencoded`;
-
+        headerss[`Access-Control-Allow-Origin`] = `*`;
 
         try {
             data = axios.post(

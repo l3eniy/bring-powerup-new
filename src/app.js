@@ -4,15 +4,14 @@ const serverless = require('serverless-http')
 
 
 const app = express();
-//const router = express.Router();
+const router = express.Router();
 
-app.use(express.static('build'));
+
 
 const bring = new bringApi({mail: `benjamin.fuhlbruegge@gmail.com`, password: `9PiC!TSxnRXLrG&Q`});
 
 
-
-app.get("/", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
     try {
         await bring.login();
         console.log(`Successfully logged in as ${bring.name}`);
@@ -24,9 +23,13 @@ app.get("/", async (req, res, next) => {
     res.json(x);
    });
 
-   app.get("/test", (req, res, next) => {
+   
+   router.get("/test", (req, res, next) => {
     res.json({"hello" : "test"});
    });
+
+
+app.use('/', router)
 
 
 module.exports.handler = serverless(app)

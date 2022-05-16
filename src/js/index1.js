@@ -40,19 +40,12 @@ function downloadCardChecklists (e) {
     return getChecklists(e, "cards", e.getContext().card).then(function (t) {
         //var n = stringifyChecklist(t);
         // console.log(t)
-        console.log(getCheckedItems(t))
 
 
-        var options = {};
-        options.mail = "benjamin.fuhlbruegge@gmail.com";
-        options.password = "9PiC!TSxnRXLrG&Q";
-
-        var api = new bring.BringApi(options)
-        console.log(api.login())
+        // mit axios meine eigene Bring API abfragen
 
 
-        //addToBring()
-        //e.closePopup()
+        e.closePopup()
     })
 }
 

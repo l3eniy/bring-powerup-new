@@ -4,7 +4,8 @@ const serverless = require('serverless-http')
 
 
 const app = express();
-const router = express.Router();
+
+app.use(express.static('src'));
 
 
 
@@ -13,7 +14,7 @@ const router = express.Router();
 const bring = new bringApi({mail: `benjamin.fuhlbruegge@gmail.com`, password: `9PiC!TSxnRXLrG&Q`});
 
 
-router.get("/", async (req, res, next) => {
+app.get("/", async (req, res, next) => {
     try {
         await bring.login();
         console.log(`Successfully logged in as ${bring.name}`);
@@ -26,16 +27,24 @@ router.get("/", async (req, res, next) => {
    });
 
 
-   router.get("/test", (req, res, next) => {
+   app.get("/test", (req, res, next) => {
     res.json({"hello" : "test"});
    });
 
-   router.get("/js/utils.js", (req, res, next) => {
-    res.sendFile('../build/js/utils.js')
-   });
+
+   app.post('/addtobring', (req, res) => {
+
+    // Die Liste übernehmen und an Bring schicken!!!
+    var xy = req.body;
+    console.log(xy);
+    return res.send(`folgendes wurde empfangen: ${xy}`);
+  });
 
 
-app.use('/.netlify/functions/app', router)
+
+   app.listen(3000, () => {
+    console.log(`Example app listening on port 3000`)
+  })
 
 
-module.exports.handler = serverless(app)
+

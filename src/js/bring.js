@@ -5,7 +5,7 @@ class Rectangle {
     }
 
     berechneFlaeche() {
-        return this.hoehe * this.breite;
+        return this.height * this.width;
       }
   }
 

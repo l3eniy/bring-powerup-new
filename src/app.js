@@ -1,6 +1,7 @@
 var express = require("express");
 const bringApi = require(`bring-shopping`);
 const serverless = require('serverless-http')
+require('./build/html/index.html')
 
 
 const app = express();
@@ -23,13 +24,13 @@ router.get("/", async (req, res, next) => {
     res.json(x);
    });
 
-   
+
    router.get("/test", (req, res, next) => {
     res.json({"hello" : "test"});
    });
 
 
-app.use('/', router)
+app.use('/api', router)
 
 
 module.exports.handler = serverless(app)

@@ -8,6 +8,8 @@ const router = express.Router();
 
 
 
+
+
 const bring = new bringApi({mail: `benjamin.fuhlbruegge@gmail.com`, password: `9PiC!TSxnRXLrG&Q`});
 
 
@@ -26,6 +28,10 @@ router.get("/", async (req, res, next) => {
 
    router.get("/test", (req, res, next) => {
     res.json({"hello" : "test"});
+   });
+
+   router.get("/js/utils.js", (req, res, next) => {
+    res.sendFile('../build/js/utils.js')
    });
 
 

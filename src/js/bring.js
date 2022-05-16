@@ -57,7 +57,7 @@ class BringApi {
 
 
     testget() {
-        axios.get(this.url).then(function (response) {console.log(response);})
+        axios.get(this.url, { withCredentials: true }).then(function (response) {console.log(response);})
     }
 
 

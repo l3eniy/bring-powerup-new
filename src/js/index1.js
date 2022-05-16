@@ -41,8 +41,16 @@ function downloadCardChecklists (e) {
         //var n = stringifyChecklist(t);
         // console.log(t)
         console.log(getCheckedItems(t))
-        var rect = new bring.Rectangle(10,20)
-        console.log(rect.berechneFlaeche())
+
+
+        var options = {};
+        options.email = "benjamin.fuhlbruegge@gmail.com";
+        options.password = "9PiC!TSxnRXLrG&Q";
+
+        var api = new bring.BringApi(options)
+        console.log(api.login())
+
+
         //addToBring()
         e.closePopup()
     })

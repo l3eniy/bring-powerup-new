@@ -48,11 +48,11 @@ function downloadCardChecklists (e) {
         options.password = "9PiC!TSxnRXLrG&Q";
 
         var api = new bring.BringApi(options)
-        console.log(api.testget())
+        console.log(api.login())
 
 
         //addToBring()
-        e.closePopup()
+        //e.closePopup()
     })
 }
 

@@ -41,6 +41,8 @@ function downloadCardChecklists (e) {
         //var n = stringifyChecklist(t);
         // console.log(t)
         console.log(getCheckedItems(t))
+        var rect = new Rectangle(10,20)
+        console.log(rect.berechneFlaeche())
         //addToBring()
         e.closePopup()
     })

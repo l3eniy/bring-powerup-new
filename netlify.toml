@@ -1,5 +1,5 @@
 [build]
 
-included_files = ["build/**"]
+[functions]
 
-functions = "functions"
+included_files = ["build/**"]

@@ -34,7 +34,7 @@ app.get("/", async (req, res, next) => {
 
    app.post('/addtobring', (req, res) => {
 
-    // Die Liste übernehmen und an Bring schicken!!!
+    // Die Liste übernehmen und an Bring schicken!!!!
     var xy = req.body;
     console.log(xy);
     return res.send(`folgendes wurde empfangen: ${xy}`);
